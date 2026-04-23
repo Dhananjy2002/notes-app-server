@@ -47,8 +47,10 @@ app.use("/api/v1/user", userRoutes, authLimiter);
 app.use("/api/v1/notes", notesRoutes);
 
 
-
-
+// Health Check Route
+app.get("/", (req, res) => {
+    res.json({ message: "Notes App Backend is successfully running! 🚀" });
+});
 
 // 🚀 Start server
 app.listen(3005, () => console.log("Server running on port 3005"));
